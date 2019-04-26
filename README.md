@@ -1,5 +1,5 @@
 # Adobe XD Color Scale
-A plugin that can generate color scales. Select an element on an artboard and run the plugin. You can get graded colors from specific colors towards white, black, complementary colors etc. You can also get a color scale by selecting two specific colors.
+A plugin that can generate color scales. Select one Text, Rectangle, or Ellipse node and run the plugin. You can get graded colors from the node fill color towards white, black, complementary colors etc. You can also get a color scale by selecting two specific nodes.
 
 ![mainvisual](https://github.com/masa-sumimoto/adobe-xd-color-scale/blob/master/src/images/mainvisual.png)
 
