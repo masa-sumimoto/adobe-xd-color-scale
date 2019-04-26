@@ -5,7 +5,7 @@ A plugin that can generate color scales. Select an element on an artboard and ru
 
 ## How to install
 
-* This plugin has not been approved yet and can not be installed. *
+*This plugin has not been approved yet and can not be installed.*
 
 1. Select menu : Plugins > Discover Plugins
 2. Search for "Color Scale"
