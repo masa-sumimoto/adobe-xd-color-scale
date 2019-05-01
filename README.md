@@ -5,8 +5,6 @@ A plugin that can generate color scales. Select one Text, Rectangle, or Ellipse 
 
 ## How to install
 
-*This plugin has not been approved yet and can not be installed.*
-
 1. Select menu : Plugins > Discover Plugins
 2. Search for "Color Scale"
 3. Click Install
@@ -30,3 +28,11 @@ A plugin that can generate color scales. Select one Text, Rectangle, or Ellipse 
 
 ## Issue
 If you have any problems, please report an issue https://github.com/masa-sumimoto/adobe-xd-color-scale/issues.
+
+## Release Note
+April 29,2019: Version 1.0.0 Released
+
+
+
+
+
