@@ -4,7 +4,7 @@
 
 A plugin that can generate color scales. Select one Text, Rectangle, or Ellipse node and run the plugin. You can get graded colors from the node fill color towards white, black, complementary colors etc. You can also get a color scale by selecting two specific nodes.  
 
-![operation-example](https://github.com/masa-sumimoto/adobe-xd-color-scale/assets/master/src/images/operation-example.gif)  
+![operation-example](https://github.com/masa-sumimoto/adobe-xd-color-scale/blob/master/assets/images/operation-example.gif)  
 
 
 ## How to install
