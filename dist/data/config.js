@@ -9,7 +9,7 @@ const config = {
     tipHeight: 40,
     tipXGutter: 10,
     tipsBottomOffset: 40,
-  }
+  },
 };
 
 module.exports = {

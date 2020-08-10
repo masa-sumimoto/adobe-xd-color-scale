@@ -1,31 +1,36 @@
-const { alert } = require('../libs/dialogs');
-const { t } = require('../data/locales');
+const { alert } = require("../libs/dialogs");
+const { t } = require("../data/locales");
 
 async function showSelectedNoedsLengthError() {
   await alert(
-    t('selectedNoedsLengthErrorTitle'),
-    t('selectedNoedsLengthErrorDesxription')
+    t("selectedNoedsLengthErrorTitle"),
+    t("selectedNoedsLengthErrorDesxription")
   );
 }
 
 async function showRootNodeContextError() {
   await alert(
-    t('showRootNodeContextErrorTitle'),
-    t('showRootNodeContextErrorDesxription')
+    t("showRootNodeContextErrorTitle"),
+    t("showRootNodeContextErrorDesxription")
   );
 }
 
 async function showWorngScaleLengthError() {
   await alert(
-    t('showWorngScaleLengthErrorTitle'),
-    t('showWorngScaleLengthErrorDescription')
+    t("showWorngScaleLengthErrorTitle"),
+    t("showWorngScaleLengthErrorDescription")
   );
 }
 
 function rgbToHex(rgb) {
-  return '#' + rgb.map((value) => {
-    return ('0' + value.toString(16)).slice(-2);
-  }).join('');
+  return (
+    "#" +
+    rgb
+      .map((value) => {
+        return ("0" + value.toString(16)).slice(-2);
+      })
+      .join("")
+  );
 }
 
 function getRandomNum(min, max) {

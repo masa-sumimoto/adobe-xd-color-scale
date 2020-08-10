@@ -1,14 +1,15 @@
-const { config } = require('../data/config');
+const { config } = require("../data/config");
 const {
   rgbToHex,
   isIntWithinRange,
-  showWorngScaleLengthError } = require('./utilities');
-const generateScaleColors = require('./generateScaleColors');
+  showWorngScaleLengthError,
+} = require("./utilities");
+const generateScaleColors = require("./generateScaleColors");
 
 function createDialog(selection) {
   const node = selection.items[0];
   const node2 = selection.items[1];
-  const isNode2 = typeof node2 !== 'undefined' ? true : false;
+  const isNode2 = typeof node2 !== "undefined" ? true : false;
   const color = {
     // isSecond will be used only in generateScaleColors function.
     isSecond: isNode2,
@@ -20,7 +21,9 @@ function createDialog(selection) {
     },
     // Define color for CSS tags, even if secondColor is undefined.
     second: {
-      hex: isNode2 ? rgbToHex([node2.fill.r, node2.fill.g, node2.fill.b]) : '#000',
+      hex: isNode2
+        ? rgbToHex([node2.fill.r, node2.fill.g, node2.fill.b])
+        : "#000",
       r: isNode2 ? node2.fill.r : 0,
       g: isNode2 ? node2.fill.g : 0,
       b: isNode2 ? node2.fill.b : 0,
@@ -113,31 +116,32 @@ function createDialog(selection) {
     scaleMode,
     scaleLength,
     scaleOptionParts,
-    includeEnd] = [
-      'dialog',
-      'form',
-      '#cancelBtn',
-      '#okBtn',
-      '#secondColorParts',
-      '#scaleModeParts',
-      '#scaleMode',
-      '#scaleLength',
-      '#scaleOptionParts',
-      '#optionIncludeEndColor',
-    ].map(s => document.querySelector(s));
+    includeEnd,
+  ] = [
+    "dialog",
+    "form",
+    "#cancelBtn",
+    "#okBtn",
+    "#secondColorParts",
+    "#scaleModeParts",
+    "#scaleMode",
+    "#scaleLength",
+    "#scaleOptionParts",
+    "#optionIncludeEndColor",
+  ].map((s) => document.querySelector(s));
   // Adjust UI
   // Normal UI or 2 Color UI
   if (!isNode2) {
-    secondColorParts.classList.add('d-none');
+    secondColorParts.classList.add("d-none");
   } else {
-    scaleModeParts.classList.add('d-none');
-    scaleOptionParts.classList.add('d-none');
+    scaleModeParts.classList.add("d-none");
+    scaleOptionParts.classList.add("d-none");
   }
   // Adjust UI with event
-  // If selected mode do not need `Include End Color option`, It make required mode. 
-  scaleMode.onchange = event => {
+  // If selected mode do not need `Include End Color option`, It make required mode.
+  scaleMode.onchange = (event) => {
     const val = event.target.value;
-    if (val === 'complementary' || val === 'random') {
+    if (val === "complementary" || val === "random") {
       includeEnd.checked = true;
       includeEnd.disabled = true;
     } else {
@@ -146,22 +150,61 @@ function createDialog(selection) {
   };
   // Dialog Events
   // Cancel Button or ESC Key
-  cancelBtn.addEventListener('click', () => dialog.close('reasonCanceled'));
+  cancelBtn.addEventListener("click", () => dialog.close("reasonCanceled"));
   // Create Button
-  okBtn.addEventListener('click', e => handleSubmit(e, selection, dialog, scaleMode, scaleLength, includeEnd, color));
+  okBtn.addEventListener("click", (e) =>
+    handleSubmit(
+      e,
+      selection,
+      dialog,
+      scaleMode,
+      scaleLength,
+      includeEnd,
+      color
+    )
+  );
   // Return key
-  form.onsubmit = e => handleSubmit(e, selection, dialog, scaleMode, scaleLength, includeEnd, color);
+  form.onsubmit = (e) =>
+    handleSubmit(
+      e,
+      selection,
+      dialog,
+      scaleMode,
+      scaleLength,
+      includeEnd,
+      color
+    );
   return dialog;
 }
 
-function handleSubmit(e, selection, dialog, scaleMode, scaleLength, includeEnd, color) {
+function handleSubmit(
+  e,
+  selection,
+  dialog,
+  scaleMode,
+  scaleLength,
+  includeEnd,
+  color
+) {
   // Error
-  if (!isIntWithinRange(Number(scaleLength.value), config.cmn.scaleMinLength, config.cmn.scaleMaxLength)) {
+  if (
+    !isIntWithinRange(
+      Number(scaleLength.value),
+      config.cmn.scaleMinLength,
+      config.cmn.scaleMaxLength
+    )
+  ) {
     showWorngScaleLengthError();
     return false;
   }
   // Create scale colors
-  generateScaleColors(selection, scaleMode.value, scaleLength.value, includeEnd.checked, color);
+  generateScaleColors(
+    selection,
+    scaleMode.value,
+    scaleLength.value,
+    includeEnd.checked,
+    color
+  );
   // Close the dialog, passing back data
   dialog.close();
   // Prevent further automatic close handlers
@@ -170,8 +213,8 @@ function handleSubmit(e, selection, dialog, scaleMode, scaleLength, includeEnd, 
 
 module.exports = function getScaleDialog(selection) {
   // Get the dialog if it already exists
-  let dialog = document.querySelector('dialog');
+  let dialog = document.querySelector("dialog");
   // Reset dialog html source for base-color view.
   if (dialog) dialog.remove();
   return createDialog(selection);
-}
+};
