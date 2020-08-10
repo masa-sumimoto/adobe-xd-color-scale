@@ -1,0 +1,18 @@
+{
+  "name": "adobe-xd-color-scale",
+  "version": "1.0.0",
+  "description": "Manage sources for Adobe XD Color Scale Plugin.",
+  "main": "index.js",
+  "repository": "git@github.com:masa-sumimoto/adobe-xd-color-scale.git",
+  "author": "Masaaki Sumimoto <masa.sumimoto@gmail.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "deleteTest": "rm -rf ~/Library/Application\\ Support/Adobe/Adobe\\ XD/develop/dev-color-scale",
+    "createTest": "cp -r ./src ~/Library/Application\\ Support/Adobe/Adobe\\ XD/develop/dev-color-scale",
+    "buildDev": "yarn run deleteTest && yarn run createTest",
+    "deleteDist": "rm -rf ./dist",
+    "createDist": "cp -r ./src ./dist",
+    "build": "yarn run deleteDist && yarn run createDist"
+  }
+}

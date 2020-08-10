@@ -1,7 +1,7 @@
 function t(key) {
   const texts = {
     selectedNoedsLengthErrorTitle: "Select Error",
-    selectedNoedsLengthErrorDesxription: "Be sure to select one or two nodes!!",
+    selectedNoedsLengthErrorDesxription: "Be sure to select one or two nodes",
     showRootNodeContextErrorTitle: "Context Error",
     showRootNodeContextErrorDesxription: "Be sure to select nodes in artboards",
     showWorngScaleLengthErrorTitle: "Input Error",
