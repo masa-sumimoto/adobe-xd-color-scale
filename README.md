@@ -34,9 +34,5 @@ A plugin that can generate color scales. Select one Text, Rectangle, or Ellipse 
 If you have any problems, please report an issue https://github.com/masa-sumimoto/adobe-xd-color-scale/issues.
 
 ## Release Note
-April 29,2019: Version 1.0.0 Released
-
-
-
-
-
+- August 14,2020: Version 1.0.1 Released
+- April 29,2019: Version 1.0.0 Released
