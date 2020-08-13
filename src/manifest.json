@@ -26,8 +26,8 @@
       "label": "Color Scale",
       "commandId": "run",
       "shortcut": {
-        "mac": "Cmd+Shift+h",
-        "win": "Ctrl+Shift+h"
+        "mac": "Ctrl+Opt+Shift+c",
+        "win": "Ctrl+Alt+Shift+c"
       }
     }
   ]
