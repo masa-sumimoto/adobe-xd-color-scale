@@ -38,3 +38,7 @@ If you have any problems, please report an issue https://github.com/masa-sumimot
 
 - August 14,2020: Version 1.0.1 Released
 - April 29,2019: Version 1.0.0 Released
+
+## Related
+
+- [Color Scale Web](https://color-scale.masa-sumimoto.com/)
